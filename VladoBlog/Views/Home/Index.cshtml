@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Блог";
+}
+
+@model IEnumerable<VladoBlog.Models.Post>
+@using VladoBlog.Classes;
+
+<header style="margin: 10px; padding: 5px; text-align: center;font-size: 16pt;
+  font-weight: bold; border-radius:10px">Добре дошли в този симпатичен блог!</header>
+
+<section class="row" >
+        @foreach (var post in Model)
+        {
+            <article class="post col-md-4">
+                <p class="title" style="text-align: center;
+                    font-weight: bold; font-size: 16px; border:thin; border-color:darkgray; display:block; border:1px solid; border-radius:10px ;">@post.Title</p>
+                <p style="text-align: center;">
+                    Публикувано от
+                    @if (post.Author != null)
+                {
+                        @:<i>@post.Author.FullName</i>
+            }
+                else
+                {
+                        @:<i>no author</i>
+            }
+                    <br /> на <i>@post.Date</i>
+                </p>
+
+                <p style="text-align: center; border:thin; 
+                    border-color:darkgray; display:block; border:1px solid; border-radius:15px ;">@Utils.CutText(post.Body, 260)<a href="/Posts/Details/@post.Id"><i>(още...)</i></a></p>
+
+            </article>
+        }
+</section>
+
+
+<div id="sidebar">Дата и час на Вашето посещение: @DateTime.Now</div>
+
+    
+
+
+
+
+

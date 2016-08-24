@@ -1,0 +1,65 @@
+﻿@model IEnumerable<VladoBlog.Models.Post>
+    @using VladoBlog.Classes;
+
+@{
+    ViewBag.Title = "Статии";
+}
+
+<h2>Публикувани статии</h2>
+
+<p>
+    @Html.ActionLink("Създай нова статия", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Заглавие
+        </th>
+        <th>
+           Текст
+        </th>
+        <th>
+            Дата
+        </th>
+        <th>
+            Автор
+        </th>
+        <th>
+            Действия
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Utils.CutText(item.Body)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+           @if (item.Author != null)
+           {
+            <i>@item.Author.UserName (@item.Author.FullName)</i>
+           }
+           else
+           {
+            @:(няма автор)
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Детайли", "Details", new { id = item.Id })
+            @if (User.IsInRole("Administrators")|| (item.Author != null && User.Identity.Name==item.Author.UserName))
+            {
+                @: | @Html.ActionLink("Промени", "Edit", new { id = item.Id })
+                @:| @Html.ActionLink("Изтрий", "Delete", new { id = item.Id })
+            }
+            
+        </td>
+    </tr>
+}
+
+</table>

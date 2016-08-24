@@ -1,1 +1,16 @@
-Soft uNi project!
+Soft Uni project!
+
+admin@gmail.com/123
+
+Project Scope
+Your project should implement at least the following functionality:
+•	User registration, login and logout.
+•	View some content (e.g. blog articles, listings, photos, issues, publications).
+•	Create new content (e.g. post new blog article, post new listing, upload new photo, create new issue).
+Your project should keep its data in a database or in a backend service:
+•	Use at least 2 tables (collections) with a relationship, e.g. users and blog posts.
+•	Use a database (like MySQL or MongoDB) or cloud-based backend (like Kinvey, MongoLab or RedisLab).
+Your project should implement at least 4 pages (views).
+You are allowed to create a project which is very similar to the “Blog System” developed during the course.
+You are allowed even to take the Blog System source code and modify it for your needs.
+

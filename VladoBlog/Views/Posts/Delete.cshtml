@@ -1,0 +1,48 @@
+﻿@model VladoBlog.Models.Post
+
+@{
+    ViewBag.Title = "Изтриване";
+}
+
+<h2>Изтриване</h2>
+
+<h3>Сигурни ли сте, че искате да изтриете тази статия?</h3>
+<div>
+    <h4>Статия</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Заглавие
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            Текст
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Body)
+        </dd>
+
+        <dt>
+            Дата
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Изтрий" class="btn btn-default" /> |
+            @Html.ActionLink("Обратно към статии", "Index")
+        </div>
+    }
+</div>

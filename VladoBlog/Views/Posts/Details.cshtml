@@ -1,0 +1,47 @@
+﻿@model VladoBlog.Models.Post
+
+
+@{
+    ViewBag.Title = "Детайли";
+}
+
+<h2>Пълно съдържание на статията</h2>
+
+<div>
+    <h4>Статия</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Заглавие
+        </dt>
+
+        <dd style="display: compact; text-align: center; padding-bottom:20px; border:thin; border-color:darkgray;">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            Текст
+        </dt>
+
+        <dd style="display: compact; text-align: center; ">
+            @Html.DisplayFor(model => model.Body)
+        </dd>
+
+        <dt style="padding-top: 20px;">
+            Дата
+        </dt>
+
+        <dd style="display: compact; text-align: center; padding-top: 20px;border:thin; border-color:darkgray;">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Обратно към статии", "Index")
+    @if (User.IsInRole("Administrators") || (Model.Author != null && User.Identity.Name == Model.Author.UserName))
+    {
+        @: | Html.ActionLink("Промени", "Edit", new { id = Model.Id })
+    }
+    
+</p>
