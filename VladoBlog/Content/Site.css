@@ -23,38 +23,43 @@ textarea {
     max-width: 280px;
 }
 .post{
-    margin-top: 10px;
-    margin-bottom: 15px;
+  
 }
 
-.post > h2, .post > div , .post > h3 {
-       background-color:none;
-        padding: 0px;
-    }
-.post > h2{
-   font-size: 18px;
 
+body {
+    font-family: 'Lucida Console';
+    font-size-adjust:inherit;
+    background-color:#ed8df8;
+    color:#141479;
+  
 }
-.post > h3{
-   font-size: 14px;
 
+
+#statia-title{
+
+   text-align: center;
+   font: bold 18px 'Lucida Console';
+   margin:10px;
+   resize:both;
+   padding-top:10px;
+  
+  
 }
-    .post > article {
-
-    }
-.contact >div{
+#statia-text{
+    border: 1px solid blue;
+     text-align: center;
+      font: 13px 'Lucida Console';
+      padding-bottom: 10px;
+      padding-top: 20px;
+}
+#statia{
+     text-align: center;
+     
+}
+#statia-more{
     
 }
-
-.navbar {
-    background-color: #6c0657;
-}
-.navbar-brand { color: #6c0657 !important; }
-.navbar-brand:visited { color: #6c0657; }
-.navbar-default-color { color: #6c0657;}
-.navbar-inverse { color : #6c0657; }
-
-
 
 
 

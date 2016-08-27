@@ -15,7 +15,7 @@
             Заглавие
         </dt>
 
-        <dd style="display: compact; text-align: center; padding-bottom:20px; border:thin; border-color:darkgray;">
+        <dd style="display: compact; text-justify: distribute-all-lines; text-align: left; padding-bottom:20px; border:thin; border-color:darkgray;">
             @Html.DisplayFor(model => model.Title)
         </dd>
 
@@ -41,7 +41,7 @@
     @Html.ActionLink("Обратно към статии", "Index")
     @if (User.IsInRole("Administrators") || (Model.Author != null && User.Identity.Name == Model.Author.UserName))
     {
-        @: | Html.ActionLink("Промени", "Edit", new { id = Model.Id })
+        @: | @Html.ActionLink("Промени", "Edit", new { id = Model.Id })
     }
     
 </p>
