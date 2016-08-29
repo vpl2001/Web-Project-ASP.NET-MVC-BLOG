@@ -11,7 +11,7 @@
     @Html.ActionLink("Създай нова статия", "Create")
 </p>
 <table class="table">
-    <tr>
+    <tr style="background-color:antiquewhite;">
         <th>
            Заглавие
         </th>
@@ -30,7 +30,7 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
+    <tr style="background-color:antiquewhite;">
         <td>
             @Html.DisplayFor(modelItem => item.Title)
         </td>

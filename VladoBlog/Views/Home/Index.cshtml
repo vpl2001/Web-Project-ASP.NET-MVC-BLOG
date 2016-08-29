@@ -6,11 +6,11 @@
 @using VladoBlog.Classes;
 
 
-        <aside style="border-radius:15px; padding-top: 10px; padding-bottom:15px">
-            <img src="~/Images/lila.jpg" width="950"/>
+        <aside style="border-radius:15px; padding-top: 10px; padding-bottom:15px; position:center;">
+            <img src="~/Images/lila.jpg" width="945"/>
         </aside>
 
-        <div id="main" class="row" style="">
+        <div id="main" class="row" style="position:center; display:inline-block; background-color:antiquewhite; border-radius: 15px;">
             @foreach (var post in Model)
             {
                 <div id="statia" class="post col-md-4" >
@@ -27,13 +27,15 @@
                         <br /> на <i>@post.Date</i>
                    
 
-                    <div id="statia-text" style="">@Utils.CutText(post.Body, 260)
-                    <div style="text-align:right;">
+                    <div id="statia-text" style="padding-bottom: 15px;">@Utils.CutText(post.Body, 260)
+                    <div style="text-align:right;  ">
                         <br />
                         <a href="/Posts/Details/@post.Id"><i>( Прочети пълния текст ...)</i></a>
+                        <br />
                     </div>
                     
                     </div>
+                    <br />
                 </div>
             }
         </div>
@@ -41,7 +43,7 @@
 
 <div style="float: left; padding-bottom:30px; padding-top:30px; ">Дата и час на Вашето посещение: @DateTime.Now</div>
 <aside class="image" style="position:center; padding-top: 30px; padding-bottom:15px">
-    <img src="~/Images/full (2).jpg" height="25" width="950" />
+    <img src="~/Images/full (2).jpg" height="25" width="945" />
 </aside>
 
     

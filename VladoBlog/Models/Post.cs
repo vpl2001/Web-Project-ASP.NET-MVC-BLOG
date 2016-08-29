@@ -18,6 +18,7 @@ namespace VladoBlog.Models
 
         [Required]
         [StringLength(220)]
+        [DataType(DataType.MultilineText)]
         public string Title { get; set; }
 
         [Required]

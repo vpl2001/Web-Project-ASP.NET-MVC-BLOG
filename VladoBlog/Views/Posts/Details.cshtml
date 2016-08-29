@@ -1,6 +1,5 @@
 ﻿@model VladoBlog.Models.Post
 
-
 @{
     ViewBag.Title = "Детайли";
 }
@@ -10,28 +9,31 @@
 <div>
     <h4>Статия</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
+    <dl class="dl-horizontal" style="display:inline-block;background-color:antiquewhite; border-radius:15px;">
+        <dt style="text-align : center;">
+            <br />
             Заглавие
         </dt>
 
-        <dd style="display: compact; text-justify: distribute-all-lines; text-align: left; padding-bottom:20px; border:thin; border-color:darkgray;">
+        <dd style="display: inline-block; background-color:antiquewhite; padding-top:20px;">
             @Html.DisplayFor(model => model.Title)
         </dd>
-
-        <dt>
+        
+        <dt style=" text-align:center;">
+            <br />
             Текст
+           
         </dt>
 
-        <dd style="display: compact; text-align: center; ">
+        <dd style="display: inline-block; text-align:inherit; background-color:antiquewhite; border-radius:8px;">
             @Html.DisplayFor(model => model.Body)
         </dd>
 
-        <dt style="padding-top: 20px;">
+        <dt style="padding-top: 20px;  text-align:center;">
             Дата
         </dt>
 
-        <dd style="display: compact; text-align: center; padding-top: 20px;border:thin; border-color:darkgray;">
+        <dd style="display: inline-block; text-align: justify; background-color:antiquewhite; padding-top:20px;padding-bottom:15px; ">
             @Html.DisplayFor(model => model.Date)
         </dd>
 
