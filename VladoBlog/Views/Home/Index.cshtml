@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Блог";
+    ViewBag.Title = "БГ НОВИНИ";
 }
 
 @model IEnumerable<VladoBlog.Models.Post>
@@ -13,7 +13,7 @@
         <div id="main" class="row" style="position:center; display:inline-block; background-color:antiquewhite; border-radius: 15px;">
             @foreach (var post in Model)
             {
-                <div id="statia" class="post col-md-4" >
+                <div id="statia" class="post col-md-6" >
                     <h4 id="statia-title" class="title" style="">@post.Title</h4>
                         Публикувано от
                         @if (post.Author != null)
@@ -27,7 +27,7 @@
                         <br /> на <i>@post.Date</i>
                    
 
-                    <div id="statia-text" style="padding-bottom: 15px;">@Utils.CutText(post.Body, 260)
+                    <div id="statia-text" style="padding-bottom: 15px;">@Utils.CutText((post.Body), 260)
                     <div style="text-align:right;  ">
                         <br />
                         <a href="/Posts/Details/@post.Id"><i>( Прочети пълния текст ...)</i></a>

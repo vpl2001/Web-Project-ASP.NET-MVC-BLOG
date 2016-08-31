@@ -14,7 +14,7 @@ namespace VladoBlog.Controllers
 
         public ActionResult Index()
         {
-            var post = db.Posts.Include(p => p.Author).OrderByDescending(p => p.Date).Take(3);
+            var post = db.Posts.Include(p => p.Author).OrderByDescending(p => p.Date).Take(6);
             return View(post.ToList());
         }
 
